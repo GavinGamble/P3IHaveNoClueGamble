@@ -4,38 +4,49 @@ using UnityEngine;
 
 public class RustyPlaneScript : MonoBehaviour
 {
-    public GameObject plane;
-    public Rigidbody rb;
-    public float thrust = 100f;
-    public GameObject propeller;
 
-    void Update()
+    public float speed = 50f;
+    public float verticalInput;
+    public float rotationSpeed = 45.0f;
+    public float horizontalInput;
+    public float UpSpeed = 25f;
+    // Start is called before the first frame update
+    void Start()
     {
 
-        if (Input.GetKey("left"))
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        verticalInput = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            plane.transform.Rotate(0, 0, 1, Space.World);
+            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime * verticalInput);
+            Debug.Log("Left Is Working");
         }
-        if (Input.GetKey("right"))
+
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            plane.transform.Rotate(0, 0, -1, Space.World);
+            transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime * verticalInput);
+            Debug.Log("Right Is Working");
         }
-        if (Input.GetKey("space"))
+
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            rb.AddForce(transform.forward * thrust);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            Debug.Log("Forward Is Working");
         }
-        if (Input.GetKey(KeyCode.LeftControl))
+
+        if (Input.GetKey(KeyCode.Keypad0))
         {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
-        if (Input.GetKey("down"))
-        {
-            plane.transform.Rotate(-1, 0, 0, Space.World);
-        }
-        if (Input.GetKey("up"))
-        {
-            plane.transform.Rotate(1, 0, 0, Space.World);
+            transform.Translate(Vector3.up * UpSpeed * Time.deltaTime);
+            Debug.Log("Up Is Working");
+
+            GetComponent<Rigidbody>().useGravity = false;
+
         }
     }
 }
