@@ -4,49 +4,38 @@ using UnityEngine;
 
 public class RustyPlaneScript : MonoBehaviour
 {
+    public GameObject plane;
+    public Rigidbody rb;
+    public float thrust = 100f;
+    public GameObject propeller;
 
-    public float speed = 50f;
-    public float verticalInput;
-    public float rotationSpeed = 45.0f;
-    public float horizontalInput;
-    public float UpSpeed = 25f;
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
 
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        verticalInput = Input.GetAxis("Vertical");
-
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey("left"))
         {
-            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime * verticalInput);
-            Debug.Log("Left Is Working");
+            plane.transform.Rotate(0, 0, 1, Space.World);
         }
-
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey("right"))
         {
-            transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime * verticalInput);
-            Debug.Log("Right Is Working");
+            plane.transform.Rotate(0, 0, -1, Space.World);
         }
-
-        horizontalInput = Input.GetAxis("Horizontal");
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey("space"))
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            Debug.Log("Forward Is Working");
+            rb.AddForce(transform.forward * thrust);
         }
-
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            transform.Translate(Vector3.up * UpSpeed * Time.deltaTime);
-            Debug.Log("Up Is Working");
-
-            GetComponent<Rigidbody>().useGravity = false;
-
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+        if (Input.GetKey("down"))
+        {
+            plane.transform.Rotate(-1, 0, 0, Space.World);
+        }
+        if (Input.GetKey("up"))
+        {
+            plane.transform.Rotate(1, 0, 0, Space.World);
         }
     }
 }

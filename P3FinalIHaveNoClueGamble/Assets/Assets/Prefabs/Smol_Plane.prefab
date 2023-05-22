@@ -428,8 +428,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 26.815714, y: 20.679667, z: 5.3359833}
-  m_Center: {x: -1.231307, y: 9.6805, z: 0.020592213}
+  m_Size: {x: 5.2315254, y: 1.5473037, z: 5.3359833}
+  m_Center: {x: 0.07456398, y: 0.11431688, z: 0.020592213}
 --- !u!114 &8364475787781064294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 8364475785933159345}
   - component: {fileID: 8364475785931832209}
   - component: {fileID: 8364475785930864977}
+  - component: {fileID: 3573412816188460242}
   m_Layer: 0
   m_Name: Spitfire_windows
   m_TagString: Untagged
@@ -774,6 +775,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3573412816188460242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364475785932793745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.660593, y: 19.345345, z: 2.731481}
+  m_Center: {x: 0.4852686, y: 1.074606, z: -0.97593796}
 --- !u!1 &8364475785932793747
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +885,7 @@ MonoBehaviour:
   verticalInput: 0
   rotationSpeed: 45
   horizontalInput: 0
+  UpSpeed: 25
 --- !u!1 &8364475785932793749
 GameObject:
   m_ObjectHideFlags: 0
