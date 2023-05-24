@@ -9,7 +9,7 @@ public class PlaneScript : MonoBehaviour
     public float verticalInput;
     public float rotationSpeed = 45.0f;
     public float horizontalInput;
-    public float UpSpeed = 25f;
+    public float UpSpeed = 2f;
     public bool Grounded = true;
     // Start is called before the first frame update
     void Start()
@@ -33,13 +33,16 @@ public class PlaneScript : MonoBehaviour
             transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime * verticalInput);
             Debug.Log("Right Is Working");
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0, -45, 0);
-            Debug.Log("Down Is Working");
+            transform.Rotate(0, -5, 0);
+            Debug.Log("Q(Rotate) is working");
         }
-
-
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(0, 5, 0);
+            Debug.Log("E(Rotate) is working");
+        }
 
         horizontalInput = Input.GetAxis("Horizontal");
         if (Input.GetKey(KeyCode.W))
@@ -48,18 +51,18 @@ public class PlaneScript : MonoBehaviour
             Debug.Log("Forward Is Working");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) //&& Grounded) 
+        if (Input.GetKey(KeyCode.Space))  
         {
             transform.Translate(Vector3.up * UpSpeed * Time.deltaTime);
             Debug.Log("Up Is Working");
 
             GetComponent<Rigidbody>().useGravity = false;
         }
-         else
+        else
         {
             GetComponent<Rigidbody>().useGravity = true;
         }
-       
+
 
 
 
