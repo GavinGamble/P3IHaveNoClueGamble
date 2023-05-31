@@ -24,23 +24,25 @@ public class PlaneScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime * verticalInput);
+            transform.Rotate(0, -2, 0);
             Debug.Log("Left Is Working");
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime * verticalInput);
+               transform.Rotate(0, 2, 0);
             Debug.Log("Right Is Working");
         }
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            transform.Rotate(0, -5, 0);
+            transform.Rotate(-3, 0, 0);
             Debug.Log("Q(Rotate) is working");
         }
-        if (Input.GetKey(KeyCode.Mouse1))
+         if (Input.GetKey(KeyCode.Mouse1))
         {
-            transform.Rotate(0, 5, 0);
-            Debug.Log("E(Rotate) is working");
+            transform.Rotate(3, 0 , 0);
+            Debug.Log("Rotate Down Is Working");
         }
 
         horizontalInput = Input.GetAxis("Horizontal");

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 50f;
     public float verticalInput;
-    public float rotationSpeed = 45.0f;
+    public float rotationSpeed = 160.0f;
     public float horizontalInput;
     public float UpSpeed = 7f;
     public bool Grounded = true;
@@ -27,18 +27,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Right Is Working");
             //Stay the Same 
         }
-     //  if (Input.GetKey(KeyCode.Mouse0))
-     // {
-     //     transform.Rotate(0, -5, 0);
-     //      Debug.Log("Q(Rotate) is working");
-     //Dont Need
-     //   }
-     //   if (Input.GetKey(KeyCode.Mouse1))
-     //   {
-     //       transform.Rotate(0, 5, 0);
-     //      Debug.Log("E(Rotate) is working");
-     //Dont Need
-     //}
 
         horizontalInput = Input.GetAxis("Horizontal");
         if (Input.GetKey(KeyCode.Mouse0))
@@ -48,6 +36,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Forward Is Working");
             //Go forward and Up
                 //Make Mouse0
+        }
+         if (Input.GetKey(KeyCode.Mouse1))
+        {
+            transform.Rotate(3, 0 , 0);
+            Debug.Log("Rotate Down Is Working");
         }
         // Add Tilt Up & Down
         if (Input.GetKey(KeyCode.Space))

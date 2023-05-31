@@ -15,7 +15,7 @@ public class PropellerSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.W))
         {
           propeller = Input.GetAxis("Vertical");
           transform.Rotate(Vector3.up * 40 * propeller);
