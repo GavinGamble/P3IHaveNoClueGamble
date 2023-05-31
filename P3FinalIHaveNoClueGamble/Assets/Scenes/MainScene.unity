@@ -1115,7 +1115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3117734224580871117, guid: f04c097392a9e1d4793f63fc7ce4fb9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: -5.9
       objectReference: {fileID: 0}
     - target: {fileID: 3117734224580871117, guid: f04c097392a9e1d4793f63fc7ce4fb9d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8085,8 +8085,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: W for Foward A to pitch and rotate left D to pitch and rotate right and
-    Left mouse button for up and right mouse button for down.
+  m_text: "W for Foward \nA to pitch and rotate left \nD to pitch and rotate right 
+    \nLeft mouse button for up \nRight mouse button for down\nSpace for air boost\n*Hint:
+    Hold space at the beginning for a little boost*"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9062,7 +9063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3117734224580871117, guid: f04c097392a9e1d4793f63fc7ce4fb9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 3117734224580871117, guid: f04c097392a9e1d4793f63fc7ce4fb9d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12898,7 +12899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8364475785932759331, guid: 61a6cc96b4bf14142b0b2bffa4c23ef6, type: 3}
       propertyPath: speed
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8364475785932759331, guid: 61a6cc96b4bf14142b0b2bffa4c23ef6, type: 3}
       propertyPath: UpSpeed
